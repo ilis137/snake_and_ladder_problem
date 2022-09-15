@@ -6,7 +6,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 class Player {
-    String name;
+    private String name;
+    private int position = 0;
+    private int diceCount = 0;
 
     Player(String name) {
         this.name = name;
@@ -19,9 +21,6 @@ class Player {
     public void setName(String name) {
         this.name = name;
     }
-
-    private int position = 0;
-    private int diceCount = 0;
 
     public int getPosition() {
         return position;
@@ -58,19 +57,22 @@ public class SnakeAndLadder {
         this.dieRoll = dieRoll;
     }
 
-    void rollDice() {
+    void rollDice(Player player) {
         Random random = new Random();
         int dieRoll = random.nextInt(6) + 1;
         this.setDieRoll(dieRoll);
+        int diceCount = player.getDiceCount();
+        player.setDiceCount(++diceCount);
         log.info("die rolled to: " + dieRoll);
     }
 
     void playGame() {
         int newPosition = 0;
         String[] gameStates = { "ladder", "snake", "no_play" };
+
         do {
 
-            rollDice();
+            rollDice(player1);
             Random random = new Random();
             int option = random.nextInt(3);
             int currentPosition = player1.getPosition();
@@ -89,7 +91,7 @@ public class SnakeAndLadder {
                     if (newPosition < 0)
                         newPosition = 0;
                     player1.setPosition(newPosition);
-                    log.info("player was bitten by sanke");
+                    log.info("player was bitten by snake");
                     break;
                 case "no_play":
                     newPosition = currentPosition;
@@ -101,8 +103,10 @@ public class SnakeAndLadder {
 
             }
             log.info("player's new position is: " + newPosition);
+
         } while (player1.getPosition() < 100);
-      log.info("player has won the game");
+        log.info("player has won the game");
+        log.info("player rolled dice " + player1.getDiceCount() + " times to win the game");
     }
 
     public static void main(String[] args) {
