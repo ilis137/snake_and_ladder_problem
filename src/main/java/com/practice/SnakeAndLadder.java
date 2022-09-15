@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 class Player {
     String name;
 
-    
     Player(String name) {
         this.name = name;
     }
@@ -23,7 +22,6 @@ class Player {
 
     private int position = 0;
     private int diceCount = 0;
-
 
     public int getPosition() {
         return position;
@@ -47,7 +45,7 @@ public class SnakeAndLadder {
     private static final Logger log = LogManager.getLogger(SnakeAndLadder.class);
     Player player1;
     private int dieRoll = 0;
-    
+
     SnakeAndLadder(Player player1) {
         this.player1 = player1;
     }
@@ -60,8 +58,6 @@ public class SnakeAndLadder {
         this.dieRoll = dieRoll;
     }
 
-  
-
     void rollDice() {
         Random random = new Random();
         int dieRoll = random.nextInt(6) + 1;
@@ -70,33 +66,40 @@ public class SnakeAndLadder {
     }
 
     void playGame() {
-        Random random = new Random();
-        int option = random.nextInt(3);
-        String[] gameStates = { "ladder", "snake", "no_play" };
-        int currentPosition = player1.getPosition();
         int newPosition = 0;
-        switch (gameStates[option]) {
+        String[] gameStates = { "ladder", "snake", "no_play" };
+        do {
 
-            case "ladder":
-                newPosition = currentPosition + dieRoll;
-                player1.setPosition(newPosition);
-                log.info("player will take the ladder");
-                break;
-            case "snake":
-                newPosition = currentPosition - dieRoll;
-                player1.setPosition(newPosition);
-                log.info("player was bitten by sanke");
-                break;
-            case "no_play":
-                newPosition = currentPosition;
-                player1.setPosition(newPosition);
-                log.info("player chose not to move");
-                break;
-            default:
-                break;
-        
-        }
-        log.info("player's new position is: " + newPosition);
+            rollDice();
+            Random random = new Random();
+            int option = random.nextInt(3);
+            int currentPosition = player1.getPosition();
+            if (currentPosition < 0)
+                currentPosition = 0;
+            switch (gameStates[option]) {
+
+                case "ladder":
+                    newPosition = currentPosition + dieRoll;
+                    player1.setPosition(newPosition);
+                    log.info("player will take the ladder");
+                    break;
+                case "snake":
+                    newPosition = currentPosition - dieRoll;
+                    player1.setPosition(newPosition);
+                    log.info("player was bitten by sanke");
+                    break;
+                case "no_play":
+                    newPosition = currentPosition;
+                    player1.setPosition(newPosition);
+                    log.info("player chose not to move");
+                    break;
+                default:
+                    break;
+
+            }
+            log.info("player's new position is: " + newPosition);
+        } while (player1.getPosition() < 100);
+
     }
 
     public static void main(String[] args) {
