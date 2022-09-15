@@ -1,0 +1,15 @@
+INFO  | 2022-09-13 09:27:44,869(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:14) - Hello , World Will Be Printed On Info 
+WARN  | 2022-09-13 09:27:44,876(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:15) - Hello , WorldWill Be Printed On Warn 
+ERROR | 2022-09-13 09:27:44,877(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:16) - Hello , World Will Be Printed On Error 
+FATAL | 2022-09-13 09:27:44,879(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:17) - Hello , World Will Be Printed On Fatal 
+INFO  | 2022-09-13 09:27:44,892(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:18) -  Appending string : Hello , World. 
+INFO  | 2022-09-13 09:28:05,318(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:14) - Hello , World Will Be Printed On Info 
+WARN  | 2022-09-13 09:28:05,326(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:15) - Hello , WorldWill Be Printed On Warn 
+ERROR | 2022-09-13 09:28:05,327(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:16) - Hello , World Will Be Printed On Error 
+FATAL | 2022-09-13 09:28:05,328(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:17) - Hello , World Will Be Printed On Fatal 
+INFO  | 2022-09-13 09:28:05,333(yyyy-MM-dd HH:mm:ss) | [main] practice.App (App.java:18) -  Appending string : Hello , World. 
+INFO  | 2022-09-15 09:45:29,580(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:14) - Hello , World Will Be Printed On Info 
+WARN  | 2022-09-15 09:45:29,623(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:15) - Hello , WorldWill Be Printed On Warn 
+ERROR | 2022-09-15 09:45:29,624(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:16) - Hello , World Will Be Printed On Error 
+FATAL | 2022-09-15 09:45:29,626(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:17) - Hello , World Will Be Printed On Fatal 
+INFO  | 2022-09-15 09:45:29,631(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:18) -  Appending string : Hello , World. 
