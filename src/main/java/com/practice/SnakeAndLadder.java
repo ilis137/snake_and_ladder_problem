@@ -102,7 +102,7 @@ public class SnakeAndLadder {
             }
             log.info("player's new position is: " + newPosition);
         } while (player1.getPosition() < 100);
-
+      log.info("player has won the game");
     }
 
     public static void main(String[] args) {
