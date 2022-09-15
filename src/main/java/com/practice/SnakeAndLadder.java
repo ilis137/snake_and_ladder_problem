@@ -46,7 +46,7 @@ public class SnakeAndLadder {
 
     void rollDice() {
         Random random = new Random();
-        int dieRoll = random.nextInt(6);
+        int dieRoll = random.nextInt(6)+1;
         this.setDieRoll(dieRoll);
         log.info("die rolled to: " + dieRoll);
     }
