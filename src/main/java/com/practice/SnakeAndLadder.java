@@ -74,18 +74,20 @@ public class SnakeAndLadder {
             Random random = new Random();
             int option = random.nextInt(3);
             int currentPosition = player1.getPosition();
-           
+
             switch (gameStates[option]) {
 
                 case "ladder":
                     newPosition = currentPosition + dieRoll;
+                    if (newPosition > 100)
+                        newPosition = currentPosition;
                     player1.setPosition(newPosition);
                     log.info("player will take the ladder");
                     break;
                 case "snake":
                     newPosition = currentPosition - dieRoll;
                     if (newPosition < 0)
-                    newPosition = 0;
+                        newPosition = 0;
                     player1.setPosition(newPosition);
                     log.info("player was bitten by sanke");
                     break;
