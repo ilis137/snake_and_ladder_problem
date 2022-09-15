@@ -13,3 +13,4 @@ WARN  | 2022-09-15 09:45:29,623(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndL
 ERROR | 2022-09-15 09:45:29,624(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:16) - Hello , World Will Be Printed On Error 
 FATAL | 2022-09-15 09:45:29,626(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:17) - Hello , World Will Be Printed On Fatal 
 INFO  | 2022-09-15 09:45:29,631(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:18) -  Appending string : Hello , World. 
+INFO  | 2022-09-15 10:09:26,398(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:13) - position of player 1 is:0
