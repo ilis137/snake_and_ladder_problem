@@ -21,3 +21,11 @@ INFO  | 2022-09-15 11:47:39,678(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndL
 INFO  | 2022-09-15 11:47:45,109(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:59) - initial position of player 1 is:0
 INFO  | 2022-09-15 11:48:11,487(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:59) - initial position of player 1 is:0
 INFO  | 2022-09-15 11:48:11,492(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:51) - die rolled to: 3
+INFO  | 2022-09-15 12:19:15,351(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:103) - initial position of player 1 is:0
+INFO  | 2022-09-15 12:19:15,359(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:65) - die rolled to: 2
+INFO  | 2022-09-15 12:19:15,360(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:89) - player chose not to move
+INFO  | 2022-09-15 12:19:15,361(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:95) - player's new position is: 0
+INFO  | 2022-09-15 12:19:31,129(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:103) - initial position of player 1 is:0
+INFO  | 2022-09-15 12:19:31,135(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:65) - die rolled to: 5
+INFO  | 2022-09-15 12:19:31,136(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:79) - player will take the ladder
+INFO  | 2022-09-15 12:19:31,137(yyyy-MM-dd HH:mm:ss) | [main] practice.SnakeAndLadder (SnakeAndLadder.java:95) - player's new position is: 5
