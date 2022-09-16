@@ -43,10 +43,12 @@ class Player {
 public class SnakeAndLadder {
     private static final Logger log = LogManager.getLogger(SnakeAndLadder.class);
     Player player1;
+    Player player2;
     private int dieRoll = 0;
 
-    SnakeAndLadder(Player player1) {
+    SnakeAndLadder(Player player1, Player player2) {
         this.player1 = player1;
+        this.player2 = player2;
     }
 
     public int getDieRoll() {
@@ -63,58 +65,76 @@ public class SnakeAndLadder {
         this.setDieRoll(dieRoll);
         int diceCount = player.getDiceCount();
         player.setDiceCount(++diceCount);
-        log.info("die rolled to: " + dieRoll);
+        log.info(player.getName() + "'s dice rolled to: " + dieRoll);
+    }
+
+  
+    void playOption(Player player) {
+        int currentPosition = player.getPosition();
+        int newPosition = 0;
+        String[] gameStates = { "ladder", "snake", "no_play" };
+        Random random = new Random();
+        int option = random.nextInt(3);
+        
+        switch (gameStates[option]) {
+            case "ladder":
+                newPosition = currentPosition + dieRoll;
+                if (newPosition > 100)
+                    newPosition = currentPosition;
+                player.setPosition(newPosition);
+                log.info(player.getName() + " will take the ladder");
+                log.info(player.getName() + " new position is: " + newPosition);
+                log.info(player.getName() + " Got ladder so playing again");
+                rollDice(player);           
+                playOption(player);
+                break;
+            case "snake":
+                newPosition = currentPosition - dieRoll;
+                if (newPosition < 0)
+                    newPosition = 0;
+                player.setPosition(newPosition);
+                log.info(player.getName() + " was bitten by snake");
+                break;
+            case "no_play":
+                newPosition = currentPosition;
+                player.setPosition(newPosition);
+                log.info(player.getName() + " chose not to move");
+                break;
+            default:
+                break;
+
+        }
+
     }
 
     void playGame() {
-        int newPosition = 0;
-        String[] gameStates = { "ladder", "snake", "no_play" };
 
+        Player player = null;
         do {
-
-            rollDice(player1);
-            Random random = new Random();
-            int option = random.nextInt(3);
-            int currentPosition = player1.getPosition();
-
-            switch (gameStates[option]) {
-
-                case "ladder":
-                    newPosition = currentPosition + dieRoll;
-                    if (newPosition > 100)
-                        newPosition = currentPosition;
-                    player1.setPosition(newPosition);
-                    log.info("player will take the ladder");
-                    break;
-                case "snake":
-                    newPosition = currentPosition - dieRoll;
-                    if (newPosition < 0)
-                        newPosition = 0;
-                    player1.setPosition(newPosition);
-                    log.info("player was bitten by snake");
-                    break;
-                case "no_play":
-                    newPosition = currentPosition;
-                    player1.setPosition(newPosition);
-                    log.info("player chose not to move");
-                    break;
-                default:
-                    break;
-
+            if (player != null) {
+                player = (player == player1) ? player2 : player1;
+            } else {
+                player = player1;
             }
-            log.info("player's new position is: " + newPosition);
+            rollDice(player);       
+            playOption(player);
 
-        } while (player1.getPosition() < 100);
-        log.info("player has won the game");
-        log.info("player rolled dice " + player1.getDiceCount() + " times to win the game");
+            log.info(player.getName() + " new position is: " + player.getPosition());
+
+        } while (player1.getPosition() < 100 && player2.getPosition() < 100);
+
+        log.info(player.getName() + " has won the game");
+        log.info(player.getName() + " rolled dice " + player.getDiceCount() + " times to win the game");
     }
 
     public static void main(String[] args) {
         Player player1 = new Player("player 1");
-
-        SnakeAndLadder game = new SnakeAndLadder(player1);
+        Player player2 = new Player("player 2");
+        SnakeAndLadder game = new SnakeAndLadder(player1, player2);
         game.player1.setPosition(0);
         log.info("initial position of " + game.player1.getName() + " is:" + game.player1.getPosition());
+        game.player2.setPosition(0);
+        log.info("initial position of " + game.player2.getName() + " is:" + game.player2.getPosition());
 
         game.playGame();
     }
